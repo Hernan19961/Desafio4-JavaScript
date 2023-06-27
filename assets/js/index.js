@@ -35,7 +35,7 @@ const propiedadesJSON = [
     description: "Ten cerca de ti lo que necesitas",
     src:
       "https://fotos.perfil.com/2018/09/21/trim/950/534/nueva-york-09212018-366965.jpg",
-    rooms: 3,
+    rooms: 1,
     m: 80
   },
   {
@@ -51,7 +51,7 @@ const propiedadesJSON = [
     description: "Desde las alturas todo se ve mejor",
     src:
       "https://www.adondevivir.com/noticias/wp-content/uploads/2016/08/depto-1024x546.jpg",
-    rooms: 5,
+    rooms: 4,
     m: 200
   },
   {
@@ -80,6 +80,7 @@ function funcionPrincipal() {
           <p class="card-text">Pieza: ${casa.rooms} Metro: ${casa.m}</p>
           <p class="card-text">${casa.description}</p>
           <button>Ver mas</button>
+        
       </div>
   </div>`
     };
@@ -137,11 +138,12 @@ function mayor_y_menor(mayor, menor) {
     return nuevo_mayor, numero_menor;
   }
 };
+
 buscar.addEventListener("click", ()=>{
   if(cantidad_habitaciones==null || total_max==null || total_min==null){
     alert("Faltan Campos requeridos")
     return 0;
-  } else if(cantidad_habitaciones <= 0 || total_max <= 0 || total_min <= 0){
+  } else if(cantidad_habitaciones == 0 || total_max <= 0 || total_min <= 0){
     alert("Numeros invalidos")
   } else{
     mayor_y_menor(total_max,total_min);
@@ -154,8 +156,7 @@ buscar.addEventListener("click", ()=>{
   htmlFiltro="";
   contador=0;
 
-})
-
+});
 
 
 
